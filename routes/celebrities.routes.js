@@ -14,12 +14,14 @@ router.get("/celebrities/create", (request, response, next) => {
 
 // here the post 
 router.post("/celebrities/create", async (request, response, next) => {
-    // get the data
 console.log(request.body);
 const data = request.body
 try {
     const newCelebrity = await Celebrity.create(data)
     console.log(newCelebrity)
-}); 
+    
+}catch(err) {
+    console.log(err)
+} }); 
 
 module.exports = router
